@@ -1,0 +1,101 @@
+---
+import SectionTitle from "./SectionTitle.astro";
+import Icon from "./Icon.astro";
+---
+
+<section class="mx-auto flex max-w-[1280px] flex-col px-8 py-24">
+  <SectionTitle title="Pricing" />
+  <p class="mb-8 max-w-3xl text-lg text-gray-500 italic font-serif">
+    We have affordable pricing plans that includes design, development, hosting,
+    and maintainence. We also have a-la-carte services if you need a specific
+    service. Please contact us for custom pricing options. If you can't afford,
+    we'll try to help.
+  </p>
+
+  <div class="flex flex-col md:flex-row gap-4">
+    <div class="border rounded p-4">
+      <p class="text-2xl font-semibold">Basic</p>
+
+      <ul>
+        <li><Icon icon="check-circle" color="var(--check)" />Design</li>
+        <li>
+          <Icon icon="check-circle" color="var(--check)" />Development
+        </li>
+        <li><Icon icon="check-circle" color="var(--check)" />Hosting</li>
+        <li>
+          <Icon icon="check-circle" color="var(--check)" />Maintainence
+        </li>
+        <li>
+          <Icon icon="check-circle" color="var(--check)" />Quarterly Updates
+        </li>
+      </ul>
+      <p class="text-xl">
+        $250/month <span class="text-sm">or $2500/year</span>
+      </p>
+      <p class="text-sm">Save $500 with annual plan</p>
+    </div>
+    <div class="border rounded p-4">
+      <p class="text-2xl font-semibold">Premium</p>
+      <ul>
+        <li><Icon icon="check-circle" color="var(--check)" />Design</li>
+        <li><Icon icon="check-circle" color="var(--check)" />Development</li>
+        <li><Icon icon="check-circle" color="var(--check)" />Hosting</li>
+        <li><Icon icon="check-circle" color="var(--check)" />Maintainence</li>
+        <li>
+          <Icon icon="check-circle" color="var(--check)" />Monthly Updates
+        </li>
+      </ul>
+      <p class="text-xl">
+        $500/month <span class="text-sm">or $5,000/year</span>
+      </p>
+      <p class="text-sm">Save $1,000 with annual plan</p>
+    </div>
+    <div class="border rounded p-4">
+      <p class="text-2xl font-semibold">Premium Plus</p>
+      <ul>
+        <li><Icon icon="check-circle" color="var(--check)" />Design</li>
+        <li><Icon icon="check-circle" color="var(--check)" />Development</li>
+        <li><Icon icon="check-circle" color="var(--check)" />Hosting</li>
+        <li><Icon icon="check-circle" color="var(--check)" />Maintainence</li>
+        <li><Icon icon="check-circle" color="var(--check)" />Weekly Updates</li>
+      </ul>
+      <p class="text-xl">
+        $1000/month <span class="text-sm">or $10,000/year</span>
+      </p>
+      <p class="text-sm">Save $2,000 with annual plan</p>
+    </div>
+  </div>
+
+  <!--div class="flex flex-col my-8 px-4 max-w-sm">
+    <p class="max-w-3xl text-2xl text-gray-500 italic font-serif">
+      A-la-carte pricing
+    </p>
+    <div>
+      <div class="flex justify-between items-center gap-4">
+        <p class="text-md font-semibold">Design</p>
+
+        <p class="text-sm">$1,000</p>
+      </div>
+      <div class="flex justify-between items-center gap-4">
+        <p class="text-md font-semibold">Feature Integration</p>
+
+        <p class="text-sm">$1,000</p>
+      </div>
+      <div class="flex justify-between items-center gap-4">
+        <p class="text-md font-semibold">Miscellaneous</p>
+
+        <p class="text-sm">Contact us</p>
+      </div>
+    </div-->
+</section>
+
+<style>
+  ul {
+    padding: 1rem 0 1rem;
+  }
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+</style>

@@ -1,0 +1,68 @@
+---
+// Learn about using Astro layouts:
+// https://docs.astro.build/en/core-concepts/layouts/
+
+// Component Imports
+import MainHead from "../components/MainHead.astro";
+
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title?: string | undefined;
+  description?: string | undefined;
+}
+
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <MainHead title={title} description={description} />
+  </head>
+  <body>
+    <div>
+     
+<div
+class="w-full"
+x-data="{ showStickyHeader: false }"
+@scroll.window="showStickyHeader = (window.scrollY > stickyHeaderThreshold)"
+x-init="stickyHeaderThreshold = $refs.secondHeader.offsetTop"
+>
+<!-- Sticky Header (Initially Hidden) -->
+<nav
+  x-show="showStickyHeader"
+  class="fixed top-0 z-50 w-full px-2 text-sm md:text-md bg-white bg-opacity-60 backdrop-blur-xs dark:bg-slate-50 dark:bg-opacity-60"
+>
+  <div class="mx-auto flex max-w-7xl items-center justify-center text-center">
+    <a
+      href="/"
+      class="focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200 rounded-md focus-visible:outline focus-visible:outline-2"
+    >
+      <span class="sr-only">The Nonprofit Studio</span>
+      <p class="text-xl md:text-2xl font-thin text-slate-600">
+        the <span class="font-bold">nonprofit</span> studio
+      </p>
+    </a>
+  </div>
+</nav>
+
+<!-- Second Normal Header (Reference for Scroll Position) -->
+<nav
+  x-ref="secondHeader"
+  class="flex w-full flex-col mt-24 md:mt-36 lg:mt-48"
+>
+  <div class="flex justify-center">
+
+    <a href="/" class=" font-sans">  <p class="text-2xl md:text-3xl font-thin text-slate-600">
+      the <span class="font-bold">nonprofit</span> studio
+    </p> </a>
+       
+   
+  </div>
+</nav>
+</div>
+      <slot />
+      <Footer />
+    </div>
+  </body>
+</html>

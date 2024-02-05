@@ -1,0 +1,44 @@
+---
+import Steps from "./Steps.astro";
+import TreeImage from "../images/how_it_works2.png";
+import { Image } from "astro:assets";
+import SectionTitle from "../components/SectionTitle.astro";
+---
+
+<section class="mx-auto flex max-w-[1280px] flex-col px-8 py-24">
+  <div class="">
+    <SectionTitle title="How it Works" />
+    <p class="mb-8 max-w-3xl text-lg text-gray-500 italic font-serif">
+      Thinking about getting a website? We have a risk-free guarantee. Simply
+      request a free website preview. No credit card needed. If you like it you
+      can purchase our service.
+    </p>
+  </div>
+
+  <div class="flex flex-col md:flex-row items-center">
+    <div class="flex order-2 md:order-1 gap-8 flex-col p-2 m-2 w=1/2">
+      <Steps
+        step_num="Step 1"
+        step_title="Request a free website preview"
+        step_description="Send us an email with your requirements and we'll get started on your free preview."
+      />
+
+      <Steps
+        step_num="Step 2"
+        step_title="We'll send you a free preview"
+        step_description="In 1-2 days, we'll send you a private link to your website. Give us your feedback and we'll make any changes you need.    "
+      />
+
+      <Steps
+        step_num="Step 3"
+        step_title="Purchase our service"
+        step_description="If you like the preview, you can purchase our service. We'll then launch your website and continue to keep working together."
+      />
+    </div>
+
+    <div class="md:w-1/2 order-1 md:order-2">
+      <Image class="object-cover" src={TreeImage} alt="preview" />
+    </div>
+  </div>
+</section>
+./SectionTitle.astro

@@ -1,0 +1,73 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+
+import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
+
+import ContactCTA from "../../components/ContactCTA.astro";
+
+interface Props {
+  entry: CollectionEntry<"work">;
+}
+
+// This is a dynamic route that generates a page for every Markdown file in src/content/
+// Read more about dynamic routes and this `getStaticPaths` function in the Astro docs:
+// https://docs.astro.build/en/core-concepts/routing/#dynamic-routes
+export async function getStaticPaths() {
+  const work = await getCollection("work");
+  return work.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<CaseStudyLayout title={entry.data.title} description={entry.data.description}>
+  <div class="">
+    <div class="max-w-7xl mx-auto">
+      <div class="">
+        <div>
+
+
+        
+          <main class="max-w-5xl p-8 mx-auto">
+          
+          
+            <div class="flex justify-between my-10">
+              <p>Example Project</p>
+              <p>001</p>
+            </div>
+            <hr />
+            <h1 class="text-xl lg:text-[40px] leading-[130%] mt-8 mb-4">
+              {entry.data.title}
+            </h1>
+            <div class="">
+              <!--div class="tags">
+					{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
+				  </div-->
+              <p class=" text-xl lg:text-[40px] leading-[130%]">
+                {entry.data.description}
+              </p>
+            </div>
+           <div class="my-8">
+            {
+              entry.data.img && (
+                <img src={entry.data.img} alt={entry.data.img_alt || ""} />
+              )
+            }
+           </div>
+          </main>
+
+          <div class="max-w-5xl p-8   mx-auto my-8">
+            <Content />
+          </div>
+        </div>
+      </div>
+    </div>
+    <ContactCTA />
+
+    <style></style>
+  </div>
+</CaseStudyLayout>

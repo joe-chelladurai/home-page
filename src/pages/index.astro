@@ -1,0 +1,110 @@
+---
+import Hero from "../components/Hero.astro";
+import Nav from "../components/Nav.astro";
+import Features from "../components/Features.astro";
+import HowItWorks from "../components/HowItWorks.astro";
+import GetStarted from "../components/GetStarted.astro";
+import Pricing from "../components/Pricing.astro";
+import FAQ from "../components/FAQ.astro";
+import "../styles/theme.css";
+import GoogleAnalytics from "../components/GoogleAnalytics.astro";
+import Footer from "../components/Footer.astro";
+import { Image } from "astro:assets";
+import endImage from "../images/flower_pot.webp";
+import Work from "../components/Work.astro";
+
+import SectionTitle from "../components/SectionTitle.astro";
+
+import { type CollectionEntry, getCollection } from "astro:content";
+
+interface Props {
+  entry: CollectionEntry<"work">;
+}
+
+import PortfolioPreview from "../components/PortfolioPreview.astro";
+import Work from "../components/Work.astro";
+
+const projects = (await getCollection("work")).sort(
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="Affordable web design and development services for nonprofits and community organizations. Specializing in creative, user-friendly website solutions."
+    />
+    <title>Joe Chelladurai | Web Design and Development</title>
+  </head>
+
+  <body>
+    <Nav />
+
+    <Hero />
+    <Work />
+    <Features />
+    <HowItWorks />
+
+    <section class="mx-auto flex max-w-[1280px] flex-col px-8 py-24">
+      <SectionTitle title="Featured Work Examples" />
+      <p class="mb-8 max-w-3xl text-lg text-gray-500 italic font-serif">
+        These are some example websites. They are not actual clients.
+      </p>
+
+      <div class="flex flex-col gap-16 py-8">
+        {projects.map((project) => <PortfolioPreview project={project} />)}
+      </div>
+    </section>
+
+    <Pricing />
+    <GetStarted />
+    <FAQ />
+    <Image
+      src={endImage}
+      width="150"
+      height="150"
+      class="mx-auto mb-16"
+      alt="a flower pot with yello and green leaves"
+    />
+    <Footer />
+
+ 
+
+    <!-- mb-2 mt-2     mb-6   leading-[72px]    mb-8 -->
+  </body><!--section class="
+          mx-auto
+          max-w-[1280px]
+          bg-blue-200
+          px-8
+          py-24"
+        >
+          <div class="flex flex-col items-center bg-white p-8 text-center">
+            <div class="mb-8">
+              <div class="h-8 w-32 rounded-full bg-amber-200"></div>
+            </div>
+
+            <blockquote
+              class="quote mb-8 text-4xl font-medium tracking-tight text-gray-900"
+            >
+              We’ve been using Untitled to kick start every new project and
+              can’t imagine working without it.
+            </blockquote>
+
+            <div class="h-16 w-16 rounded-full bg-amber-200"></div>
+
+            <div class="person-name text-xl font-semibold leading-7">
+              Jane Doe
+            </div>
+
+            <div class="company-name text-lg leading-6">ABC Corporation</div>
+          </div>
+        </a>
+
+        <section class="mx-auto max-w-[720px] py-24">
+          <!--Accordion / -->
+</html>

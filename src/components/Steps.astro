@@ -1,0 +1,11 @@
+---
+const { step_num, step_title, step_description } = Astro.props;
+---
+
+<div class="mb-2 flex flex-col gap-2 max-w-md">
+  <p class="uppercase tracking-widest font-bold text-slate-500 rounded-lg">
+    {step_num}
+  </p>
+  <h3 class="text-xl font-semibold">{step_title}</h3>
+  <p class="text-gray-500">{step_description}</p>
+</div>

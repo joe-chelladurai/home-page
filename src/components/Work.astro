@@ -1,0 +1,98 @@
+---
+import FeatureCard from "../components/FeatureCard.astro";
+import SectionTitle from "./SectionTitle.astro";
+import WorkCard from "./WorkCard.astro";
+---
+
+<section class="mx-auto max-w-[1280px] gap-4 flex my-4">
+  <div class="w-1/2 flex justify-evenly">
+    <WorkCard
+      title="work"
+      description="a"
+      img_src="https://via.placeholder.com/250"
+      alt="Creative project A representation"
+      height="250"
+      width="250"
+    />
+    <WorkCard
+      title="work"
+      description="b"
+      img_src="https://via.placeholder.com/250"
+      alt="Creative project B representation"
+      height="250"
+      width="250"
+    />
+  </div>
+  <div class="w-1/2 flex justify-evenly">
+    <WorkCard
+      title="work"
+      description="c"
+      img_src="https://via.placeholder.com/500"
+      alt="Creative project C representation"
+      height="500"
+      width="500"
+    />
+  </div>
+</section>
+
+<section class="mx-auto max-w-[1280px] gap-4 flex my-4">
+  <div class="w-1/2 flex gap-4">
+    <WorkCard
+      title="work"
+      description="a"
+      img_src="https://via.placeholder.com/150"
+      alt="Detailed view of project A"
+      height="300"
+      width="400"
+    />
+  </div>
+  <div class="w-1/2 flex gap-4">
+    <WorkCard
+      title="work"
+      description="c"
+      img_src="https://via.placeholder.com/150"
+      alt="Detailed view of project C"
+      height="300"
+      width="400"
+    />
+    <WorkCard
+      title="work"
+      description="b"
+      img_src="https://via.placeholder.com/150"
+      alt="Detailed view of project B"
+      height="300"
+      width="400"
+    />
+  </div>
+</section>
+
+<section class="mx-auto max-w-[1280px] gap-4 flex my-4">
+  <div class="w-1/2 flex gap-4">
+    <WorkCard
+      title="work"
+      description="a"
+      img_src="https://via.placeholder.com/150"
+      alt="Overview of project A"
+      height="300"
+      width="400"
+    />
+    <WorkCard
+      title="work"
+      description="b"
+      img_src="https://via.placeholder.com/150"
+      alt="Overview of project B"
+      height="300"
+      width="400"
+    />
+  </div>
+  <div class="w-1/2">
+    <WorkCard
+      title="work"
+      description="c"
+      img_src="https://via.placeholder.com/150"
+      alt="Overview of project C"
+      height="300"
+      width="400"
+    />
+  </div>
+</section>

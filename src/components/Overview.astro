@@ -1,0 +1,18 @@
+---
+const { problemDescription, outcomeDescription } = Astro.props;
+---
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-y-4 lg:gap-x-12 pb-10 items-start lg:px-0 ">
+
+    <p class="border-b-2 lg:col-span-2 border-b-slate-400 pb-2 lg:mb-8 font-black"> Overview</p>
+    
+    
+    <div class="lg:col-span-1">
+        <p class="font-bold text-[18px]">Problem</p> 
+        <p class="text-[18px]">{problemDescription}</p>
+    </div>
+    <div class="lg:col-span-1">
+        <p class="font-bold text-[18px]">Outcome</p>
+        <p class="text-[18px]">{outcomeDescription}</p>
+    </div>
+    </div>

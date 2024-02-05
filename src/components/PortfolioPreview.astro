@@ -1,0 +1,41 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  project: CollectionEntry<"work">;
+}
+
+const { data, slug } = Astro.props.project;
+const backgroundColor = data.backgroundColor;
+---
+
+<style define:vars={{ backgroundColor }}>
+  .custom-bg-color {
+    background-color: var(--backgroundColor);
+  }
+</style>
+<div>
+  <a class="block" href={`/work/${slug}`}>
+    <div
+      class="w-full rounded-lg shadow-md border flex flex-col items-start lg:flex-row lg:gap-16"
+    >
+      <div class="lg:w-1/3 p-8">
+        <p class="text-2xl md:text-3xl font-serif mb-4">{data.title}</p>
+
+        <p class="mb-1 text-sm md:text-lg max-w-sm mb-2 text-gray-500">
+          {data.description}
+        </p>
+        <p class="text-sm w-[300px]">Read about how we helped them &rarr;</p>
+      </div>
+
+      <div class="lg:w-2/3 bg-amber-50 w-full">
+        <img
+          src={data.img}
+          alt={data.img_alt || ""}
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </div>
+  </a>
+</div>

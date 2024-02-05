@@ -1,0 +1,14 @@
+---
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+
+import Navigation from "../components/Navigation.astro";
+---
+
+<Navigation />
+
+<p>We help nonprofits succeed through better websites.</p>
+
+<p>Our technical expertise:</p>
+<ul>
+  {skills.map((skill) => <li>{skill}</li>)}
+</ul>

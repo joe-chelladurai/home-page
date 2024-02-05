@@ -1,0 +1,151 @@
+<div x-data="{ selected: 1 }" class="border border-gray-200 rounded-lg p-3">
+  <div class="[&>*]:border-b [&>*]:border-b-gray-200 last:[&>*]:border-b-0">
+    <!-- Accordion item 1 -->
+    <div>
+      <button
+        @click="selected !== 1 ? selected = 1 : selected = null"
+        class="w-full flex justify-between items-center p-3"
+        role="button"
+        :aria-expanded="selected === 1 ? 'true' : 'false'"
+        aria-controls="faq1"
+      >
+        <h3 class="text-lg font-semibold">Is there a free trial available?</h3>
+        <div>
+          <span
+            class="text-lg block"
+            :class="selected === 1 ? 'rotate-180' : ''"
+          >
+            <svg
+              fill="#6b6b6b"
+              height="20px"
+              width="20px"
+              version="1.1"
+              id="Layer_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 330 330"
+              xml:space="preserve"
+              ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+                <path
+                  id="XMLID_225_"
+                  d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                ></path>
+              </g></svg
+            >
+          </span>
+        </div>
+      </button>
+      <div
+        x-cloak
+        x-show="selected === 1"
+        class="text-sm text-black/50 p-3"
+        id="faq1"
+      >
+        <p>
+          Yes, you can try us for free for 30 days. If you want, we’ll provide
+          you with a free, personalized 30-minute onboarding call to get you up
+          and running as soon as possible.
+        </p>
+      </div>
+    </div>
+    <!-- Accordion item 2 -->
+    <div>
+      <button
+        @click="selected !== 2 ? selected = 2 : selected = null"
+        class="w-full flex justify-between items-center p-3"
+        role="button"
+        :aria-expanded="selected === 2 ? 'true' : 'false'"
+        aria-controls="faq2"
+      >
+        <h3 class="text-lg font-semibold">How do I track my order?</h3>
+        <div>
+          <span
+            class="text-lg block"
+            :class="selected === 2 ? 'rotate-180' : ''"
+          >
+            <svg
+              fill="#6b6b6b"
+              height="20px"
+              width="20px"
+              version="1.1"
+              id="Layer_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 330 330"
+              xml:space="preserve"
+              ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+                <path
+                  id="XMLID_225_"
+                  d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                ></path>
+              </g></svg
+            >
+          </span>
+        </div>
+      </button>
+      <div
+        x-cloak
+        x-show="selected === 2"
+        class="text-sm text-black/50 p-3"
+        id="faq2"
+      >
+        Yes
+      </div>
+    </div>
+    <!-- Accordion item 3 -->
+    <div>
+      <button
+        @click="selected !== 3 ? selected = 3 : selected = null"
+        class="w-full flex justify-between items-center p-3"
+        role="button"
+        :aria-expanded="selected === 3 ? 'true' : 'false'"
+        aria-controls="faq3"
+      >
+        <h3 class="text-lg font-semibold">
+          Do you offer international shipping?
+        </h3>
+        <div>
+          <span
+            class="text-lg block"
+            :class="selected === 3 ? 'rotate-180' : ''"
+          >
+            <svg
+              fill="#6b6b6b"
+              height="20px"
+              width="20px"
+              version="1.1"
+              id="Layer_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 330 330"
+              xml:space="preserve"
+              ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier">
+                <path
+                  id="XMLID_225_"
+                  d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"
+                ></path>
+              </g></svg
+            >
+          </span>
+        </div>
+      </button>
+      <div
+        x-cloak
+        x-show="selected === 3"
+        class="text-sm text-black/50 p-3"
+        id="faq3"
+      >
+        <!-- Content for Accordion item 3 -->
+      </div>
+    </div>
+  </div>
+</div>

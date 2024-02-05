@@ -1,0 +1,73 @@
+---
+import heroImage from "../images/herobanner.webp";
+import { Image } from "astro:assets";
+---
+
+<header
+  class="mx-auto my-12 mb-16 flex h-auto max-w-[1280px] px-8 gap-8"
+>
+  <div
+    class="flex w-full gap-4  justify-between rounded-md p-4"
+  >
+   <div class="flex md:flex-col md:w-1/2   gap-4">
+  
+
+  <h2
+    class="text-3xl text-slate-700 md:text-4xl font-['Manrope'] flex md:w-[400px] flex-col lg:gap-4 lg:text-6xl "
+  >
+    I create <span class="block text-black text-3xl  self-center md:text-4xl lg:text-7xl font-serif italic"
+      >great-looking </span
+    > 
+    <span class="block self-end">websites</span>
+  </h2>
+   </div>
+  <div class="flex flex-col justify-end w-1/2 lg:p-10 gap-4  ">
+    <p
+    class="mt-2 text-xs md:text-sm self-start rounded-full border border-green-50 bg-green-50 px-2"
+  >
+    <span
+      style="display: inline-flex; align-items: center; vertical-align: middle;"
+    >
+      <svg width="10" height="10" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="5" cy="5" r="5" fill="green"></circle>
+      </svg>
+      <span style="margin-left: 5px;" class="text-green-700 tracking-wide font-normal"
+        >Available</span
+      >
+    </span>
+  </p>
+    <p
+    class="md:text-md text-sm max-w-md  font-[300] text-pretty lg:text-xl"
+  >
+  Hi, I'm Joe Chelladurai. I've been creating websites and digital experiences for over 5 years.
+  </p>
+
+  <div class="flex flex-col md:flex-row gap-2">
+    <div class="flex flex-col items-center">
+      <a
+        href="#getstarted"
+        class="w-full rounded bg-slate-700 px-8 py-1 text-white text-sm lg:text-lg"
+      >
+        Get in touch
+      </a>
+      
+    </div>
+  </div>
+  </div>
+  </div>
+
+  <!--div class="flex h-48 w-full my-8 items-center rounded justify-center shadow">
+    <Image
+      src={heroImage}
+      alt="a watercolor landscape"
+      class="h-full w-full object-cover object-center opacity-70"
+    />
+  </div -->
+</header>
+
+<!--div
+      class="pattern-cross pattern-yellow-500 pattern-bg-white
+      pattern-size-6 pattern-opacity-20 w-full h-full"
+    >
+
+  </div>-->

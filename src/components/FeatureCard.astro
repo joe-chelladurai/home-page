@@ -1,0 +1,85 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { iconPaths } from "./IconPaths";
+
+interface Props {
+  icon: keyof typeof iconPaths;
+  color?: string;
+  gradient?: boolean;
+  size?: string;
+  heading?: string;
+  description?: string;
+}
+
+const {
+  color = "currentcolor",
+  gradient,
+  icon,
+  size,
+  heading,
+  description,
+} = Astro.props;
+const iconPath = iconPaths[icon];
+
+const attrs: HTMLAttributes<"svg"> = {};
+if (size) attrs.style = { "--size": size };
+
+const gradientId =
+  "icon-gradient-" + Math.round(Math.random() * 10e12).toString(36);
+---
+
+<div class="flex flex-col gap-4">
+  <div class="w-full max-w-lg relative">
+    <!-- Container for the SVG icon and the Blob -->
+    <div class="flex items-center relative">
+      <!-- Blob as background, positioned absolutely within the container -- add a color to activate it like bg-blue-400 -->
+      <div
+        class="absolute -top-2 -left-2 w-12 h-12 rounded-full opacity-30 mix-blend-multiply filter blur-sm animate-blob"
+      >
+      </div>
+
+      <!-- SVG Icon -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="40"
+        height="40"
+        viewBox="0 0 256 256"
+        aria-hidden="true"
+        stroke={gradient ? `url(#${gradientId})` : color}
+        fill={gradient ? `url(#${gradientId})` : color}
+        {...attrs}
+      >
+        <g set:html={iconPath} />
+        {
+          gradient && (
+            <linearGradient
+              id={gradientId}
+              x1="23"
+              x2="235"
+              y1="43"
+              y2="202"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stop-color="var(--gradient-stop-1)" />
+              <stop offset=".5" stop-color="var(--gradient-stop-2)" />
+              <stop offset="1" stop-color="var(--gradient-stop-3)" />
+            </linearGradient>
+          )
+        }
+      </svg>
+    </div>
+  </div>
+
+  <h3 class="text-xl font-semibold leading-6">{heading}</h3>
+  <p class="leading-6">
+    {description}
+  </p>
+
+  <style>
+    svg {
+      vertical-align: middle;
+      width: var(--size, 1em);
+      height: var(--size, 1em);
+    }
+  </style>
+</div>

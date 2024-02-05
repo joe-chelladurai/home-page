@@ -1,0 +1,45 @@
+---
+
+---
+
+<div
+  class="w-full"
+  x-data="{ showStickyHeader: false }"
+  @scroll.window="showStickyHeader = (window.scrollY > stickyHeaderThreshold)"
+  x-init="stickyHeaderThreshold = $refs.secondHeader.offsetTop"
+>
+  <!-- Sticky Header (Initially Hidden) -->
+  <nav
+    x-show="showStickyHeader"
+    class="fixed top-0 z-50 w-full px-2  py-2 transition  ease-in-out delay-400  transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none text-sm md:text-md bg-white bg-opacity-100 backdrop-blur-xs dark:bg-slate-50 dark:bg-opacity-60"
+  >
+    <div class="mx-auto flex max-w-7xl ">
+      <a
+        href="/"
+        class="focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200 rounded-md focus-visible:outline focus-visible:outline-2"
+      >
+        <span class="sr-only">Home</span>
+        <ul class="text-lg text-slate-600 flex gap-4">
+          <li>Home</li>
+          <li>About</li>
+          <li>Work</li>
+         </ul>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Second Normal Header (Reference for Scroll Position) -->
+  <nav
+    x-ref="secondHeader"
+    class="w-full py-4"
+  >
+  <div class="mx-auto flex max-w-7xl py-2 ">
+      <ul class="text-lg  text-slate-600 flex gap-4 ">
+       <li>Home
+       </li>
+       <li>About</li>
+       <li>Work</li>
+      </ul>
+    </div>
+  </nav>
+</div>

@@ -1,0 +1,82 @@
+---
+import SectionTitle from "./SectionTitle.astro";
+import AccordionItem from "./AccordionItem.astro";
+const faqs = [
+  {
+    id: 1,
+    question: "How is The Nonprofit Studio unique?",
+    answer:
+      "We specialize in rapid, tailored web solutions for nonprofits, combining modern design, comprehensive support, and budget-friendly options.",
+  },
+  {
+    id: 2,
+    question: "What feedback process is used for website previews?",
+    answer:
+      "After receiving your preview, you can email us detailed feedback, which we'll use to refine your website.",
+  },
+  {
+    id: 3,
+    question: "How do we communicate during development?",
+    answer:
+      "We keep in touch through email, phone, or video calls, ensuring your input is integrated throughout the process.",
+  },
+  {
+    id: 4,
+    question: "Can specific features be integrated into my website?",
+    answer:
+      "Absolutely. We customize your website with features like donation portals, event calendars, and more, as per your requirements.",
+  },
+  {
+    id: 5,
+    question: "What does maintenance include?",
+    answer:
+      "Our plans cover security updates, performance optimization, and regular content updates, tailored to your chosen plan.",
+  },
+  {
+    id: 7,
+    question: "How do you ensure website security?",
+    answer:
+      "We use SSL certificates, regular backups, and malware protection to secure your website.",
+  },
+  {
+    id: 10,
+    question: "What if there are post-launch technical issues?",
+    answer:
+      "Our customer support team is ready to quickly resolve any technical problems post-launch.",
+  },
+  {
+    id: 12,
+    question: "What is the cancellation policy for service plans?",
+    answer:
+      "We have a straightforward cancellation policy. Contact us for specific details related to your plan.",
+  },
+  // Add more FAQs as needed
+];
+---
+
+<section class="mx-auto flex max-w-[1280px] flex-col px-8 py-24">
+  <SectionTitle title="Frequently Asked Questions" />
+  <p class="mb-8 max-w-3xl text-lg text-gray-500 italic font-serif">
+    Here are some of our frequently asked questions. If your question is not
+    here, please contact us.
+  </p>
+  <div class="max-w-3xl">
+    <div
+      x-data="{ selected: null }"
+      class="border border-gray-200 rounded-lg p-3"
+    >
+      <div class="[&>*]:border-b [&>*]:border-b-gray-200 last:[&>*]:border-b-0">
+        {
+          faqs.map((faq) => (
+            <AccordionItem
+              key={faq.id}
+              id={faq.id}
+              question={faq.question}
+              answer={faq.answer}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
