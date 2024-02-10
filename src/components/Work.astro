@@ -2,22 +2,29 @@
 import FeatureCard from "../components/FeatureCard.astro";
 import SectionTitle from "./SectionTitle.astro";
 import WorkCard from "./WorkCard.astro";
+import previewOne from "@images/preview_one.png";
 ---
+
+<p class="mx-auto max-w-[980px] italic text-sm text-right">
+  These are some featured work examples. They are not actual clients.
+</p>
 
 <section class="mx-auto max-w-[1280px] gap-4 flex my-4">
   <div class="w-1/2 flex justify-evenly">
     <WorkCard
-      title="work"
-      description="a"
-      img_src="https://via.placeholder.com/250"
+      title="Helping Hands"
+      description="Nonprofit website"
+      img_src={previewOne}
       alt="Creative project A representation"
+      link="./projects/nonprofit.html"
       height="250"
       width="250"
     />
     <WorkCard
-      title="work"
-      description="b"
+      title="KiMckinley & Co."
+      description="Professional"
       img_src="https://via.placeholder.com/250"
+      link="./projects/professional.html"
       alt="Creative project B representation"
       height="250"
       width="250"
