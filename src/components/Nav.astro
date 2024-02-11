@@ -11,35 +11,39 @@
   <!-- Sticky Header (Initially Hidden) -->
   <nav
     x-show="showStickyHeader"
-    class="fixed top-0 z-50 w-full px-2  py-2 transition  ease-in-out delay-400  transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none text-sm md:text-md bg-white bg-opacity-100 backdrop-blur-xs dark:bg-slate-50 dark:bg-opacity-60"
+    class="fixed top-0 z-50 w-full px-4 py-2 transition ease-in-out delay-400 transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none text-sm md:text-md bg-white bg-opacity-800 backdrop-blur-lg dark:bg-slate-50 dark:bg-opacity-60"
   >
-    <div class="mx-auto flex max-w-7xl ">
+    <div class="mx-auto flex max-w-7xl justify-between items-center">
+      <ul class="text-sm lg:text-lg text-slate-600 flex gap-4 lg:gap-8">
+        <li>Home</li>
+        <li>About</li>
+        <li>Work</li>
+        <li>Blog</li>
+      </ul>
       <a
-        href="/"
-        class="focus-visible:outline-primary-950 dark:group-focus-visible:outline-primary-200 rounded-md focus-visible:outline focus-visible:outline-2"
+        href="#getstarted"
+        class="rounded bg-slate-700 px-2 py-1 justify-self text-white text-sm lg:text-lg"
       >
-        <span class="sr-only">Home</span>
-        <ul class="text-lg text-slate-600 flex gap-4">
-          <li>Home</li>
-          <li>About</li>
-          <li>Work</li>
-         </ul>
+        Contact
       </a>
     </div>
   </nav>
 
   <!-- Second Normal Header (Reference for Scroll Position) -->
-  <nav
-    x-ref="secondHeader"
-    class="w-full py-4"
-  >
-  <div class="mx-auto flex max-w-7xl py-2 ">
-      <ul class="text-lg  text-slate-600 flex gap-4 ">
-       <li>Home
-       </li>
-       <li>About</li>
-       <li>Work</li>
+  <nav x-ref="secondHeader" class="w-full px-4 py-4">
+    <div class="mx-auto flex max-w-7xl justify-between items-center py-2">
+      <ul class="text-sm lg:text-lg text-slate-600 flex gap-4 lg:gap-8">
+        <li>Home</li>
+        <li>About</li>
+        <li>Work</li>
+        <li>Blog</li>
       </ul>
+      <a
+        href="#getstarted"
+        class="rounded bg-slate-700 px-2 py-1 justify-self text-white text-sm lg:text-lg"
+      >
+        Contact
+      </a>
     </div>
   </nav>
 </div>

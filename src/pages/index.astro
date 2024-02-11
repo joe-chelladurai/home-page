@@ -39,41 +39,14 @@ const projects = (await getCollection("work")).sort(
       name="description"
       content="Affordable web design and development services for nonprofits and community organizations. Specializing in creative, user-friendly website solutions."
     />
-    <title>Joe Chelladurai | Web Design and Development</title>
+    <title>Joe Chelladurai | Web Design and Development | Software</title>
   </head>
 
   <body>
     <Nav />
-
     <Hero />
-    <Work />
-    <Features />
-    <HowItWorks />
 
-    <section class="mx-auto flex max-w-[1280px] flex-col px-8 py-24">
-      <SectionTitle title="Featured Work Examples" />
-      <p class="mb-8 max-w-3xl text-lg text-gray-500 italic font-serif">
-        These are some example websites. They are not actual clients.
-      </p>
-
-      <div class="flex flex-col gap-16 py-8">
-        {projects.map((project) => <PortfolioPreview project={project} />)}
-      </div>
-    </section>
-
-    <Pricing />
-    <GetStarted />
-    <FAQ />
-    <Image
-      src={endImage}
-      width="150"
-      height="150"
-      class="mx-auto mb-16"
-      alt="a flower pot with yello and green leaves"
-    />
     <Footer />
-
- 
 
     <!-- mb-2 mt-2     mb-6   leading-[72px]    mb-8 -->
   </body><!--section class="
